@@ -5,27 +5,25 @@ import { IoMdCall } from "react-icons/io";
 import { HiMail } from "react-icons/hi";
 import { useState } from "react";
 const ContactForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [text, setText] = useState("");
 
-   const[name, setName] = useState("")
-   const[email, setEmail] = useState("")
-   const[text, setText] = useState("")
+  const onViaCallSubmit = () => {
+    console.log("i am from call");
+  };
 
-   const onViaCallSubmit = () =>{
-    console.log("i am from call")
-   }
-
-   const onSubmit =(event)=>{
+  const onSubmit = (event) => {
     event.preventDefault();
-    setName(event.target[0].value)
-    setEmail(event.target[1].value)
-    setText(event.target[2].value)
+    setName(event.target[0].value);
+    setEmail(event.target[1].value);
+    setText(event.target[2].value);
     console.log(event.target[0].value);
     console.log(event.target[1].value);
     console.log(event.target[2].value);
+  };
 
-
-   }
-
+ 
   return (
     <section className={styles.container}>
       <div className={styles.contact_form}>
@@ -34,10 +32,11 @@ const ContactForm = () => {
             text="VIA SUPPORT CHAT"
             icon={<MdMessage fontSize="24px" />}
           />
-          <Button 
-          onClick={onViaCallSubmit}
-          text="VIA CALL" 
-          icon={<IoMdCall fontSize="24px" />} />
+          <Button
+            onClick={onViaCallSubmit}
+            text="VIA CALL"
+            icon={<IoMdCall fontSize="24px" />}
+          />
         </div>
 
         <Button
@@ -68,11 +67,9 @@ const ContactForm = () => {
           </div>
         </form>
         <div className="outputs">
-          {
-          `${name} 
+          {`${name} 
           ${email} 
-          ${text}`
-            }
+          ${text}`}
         </div>
       </div>
       <div className={styles.contact_image}>
