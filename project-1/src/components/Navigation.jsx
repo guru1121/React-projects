@@ -8,7 +8,8 @@ const Navigation = ()=>{
           <li href="#">Menu</li>
           <li href="#">location</li>
           <li href="#">About</li>
-          <li href="#">Contact</li>
+          <li href="#">Contact</li> 
+          <li href="#">New</li>
         </ul>
         <button className="red-btn">login</button>
       </nav>
